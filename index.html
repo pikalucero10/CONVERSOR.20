@@ -1,19 +1,17 @@
-<html><head><base href="https://professional-dolar-peso-converter.ar/">
+<html><head><base href="https://simple-elegant-currency-converter.ar/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Conversor Profesional de Dólares a Pesos Argentinos</title>
+<title>Conversor Simple y Elegante de Dólares a Pesos Argentinos</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
   :root {
-    --primary-color: #0288D1;
-    --secondary-color: #03A9F4;
-    --accent-color: #FFC107;
-    --background-color: #F5F7FA;
-    --card-color: #FFFFFF;
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --background-color: #f9f9f9;
+    --card-color: #ffffff;
     --text-color: #333333;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --border-color: #e0e0e0;
   }
 
   * {
@@ -23,7 +21,7 @@
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -35,132 +33,89 @@
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 600px;
     width: 100%;
     background-color: var(--card-color);
-    border-radius: 20px;
-    box-shadow: var(--shadow);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
   }
 
   header {
-    background: var(--gradient);
+    background-color: var(--primary-color);
     color: white;
-    padding: 30px;
+    padding: 20px;
     text-align: center;
   }
 
   h1 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-    font-weight: 400;
-    opacity: 0.8;
+    font-size: 24px;
+    font-weight: 500;
   }
 
   .converter-content {
-    display: flex;
-    padding: 40px;
-  }
-
-  .input-section, .result-section {
-    flex: 1;
-    padding: 0 20px;
-  }
-
-  .card {
-    background-color: var(--background-color);
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 30px;
   }
 
   .input-group {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-color);
   }
 
   input, select {
     width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #E0E0E0;
-    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
     font-size: 16px;
     color: var(--text-color);
-    transition: all 0.3s ease;
-    background-color: white;
-  }
-
-  input:focus, select:focus {
-    outline: none;
-    border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.1);
   }
 
   button {
     width: 100%;
-    padding: 15px;
-    background: var(--gradient);
+    padding: 12px;
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
     font-size: 16px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 500;
   }
 
   button:hover {
-    box-shadow: 0 5px 15px rgba(3, 169, 244, 0.3);
-    transform: translateY(-2px);
+    background-color: var(--secondary-color);
   }
 
   #result, #exchangeRate {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 500;
     text-align: center;
     margin-top: 20px;
+    padding: 15px;
+    background-color: var(--background-color);
+    border-radius: 5px;
   }
 
   #lastUpdate {
     text-align: center;
     font-size: 14px;
-    color: #757575;
+    color: #777;
     margin-top: 10px;
   }
 
-  .flag {
-    display: inline-block;
-    width: 24px;
-    height: 16px;
-    margin-right: 8px;
-    vertical-align: middle;
-  }
-
   .loading {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid var(--secondary-color);
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--background-color);
+    border-top: 3px solid var(--primary-color);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin: 20px auto;
@@ -171,74 +126,48 @@
     100% { transform: rotate(360deg); }
   }
 
-  .chart-container {
-    width: 100%;
-    height: 300px;
-    margin-top: 30px;
-  }
-
-  @media (max-width: 768px) {
-    .converter-content {
-      flex-direction: column;
-    }
-    .input-section, .result-section {
+  @media (max-width: 480px) {
+    .container {
       width: 100%;
-      padding: 0;
     }
   }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Conversor Profesional</h1>
-      <p class="subtitle">Dólares a Pesos Argentinos</p>
+      <h1>Conversor de Divisas</h1>
     </header>
     <div class="converter-content">
-      <div class="input-section">
-        <div class="card">
-          <div id="exchangeRate">Cargando cotización...</div>
-          <div class="loading"></div>
-          <div id="lastUpdate"></div>
-        </div>
-        <div class="input-group">
-          <label for="amount">Cantidad:</label>
-          <input type="number" id="amount" placeholder="Ingrese la cantidad" step="0.01">
-        </div>
-        <div class="input-group">
-          <label for="from">De:</label>
-          <select id="from">
-            <option value="USD">🇺🇸 Dólares (USD)</option>
-            <option value="ARS">🇦🇷 Pesos Argentinos (ARS)</option>
-          </select>
-        </div>
-        <div class="input-group">
-          <label for="to">A:</label>
-          <select id="to">
-            <option value="ARS">🇦🇷 Pesos Argentinos (ARS)</option>
-            <option value="USD">🇺🇸 Dólares (USD)</option>
-          </select>
-        </div>
-        <button onclick="convertCurrency()">Convertir</button>
+      <div id="exchangeRate">Cargando cotización...</div>
+      <div class="loading"></div>
+      <div id="lastUpdate"></div>
+      <div class="input-group">
+        <label for="amount">Cantidad:</label>
+        <input type="number" id="amount" placeholder="Ingrese la cantidad" step="0.01">
       </div>
-      <div class="result-section">
-        <div class="card">
-          <div id="result">
-            Resultado de la conversión
-          </div>
-        </div>
-        <div class="chart-container">
-          <canvas id="exchangeRateChart"></canvas>
-        </div>
+      <div class="input-group">
+        <label for="from">De:</label>
+        <select id="from">
+          <option value="USD">Dólares (USD)</option>
+          <option value="ARS">Pesos Argentinos (ARS)</option>
+        </select>
       </div>
+      <div class="input-group">
+        <label for="to">A:</label>
+        <select id="to">
+          <option value="ARS">Pesos Argentinos (ARS)</option>
+          <option value="USD">Dólares (USD)</option>
+        </select>
+      </div>
+      <button onclick="convertCurrency()">Convertir</button>
+      <div id="result"></div>
     </div>
   </div>
 
   <script>
     let exchangeRate;
     let lastUpdate;
-    let chart;
 
     async function fetchExchangeRate() {
       try {
@@ -246,10 +175,9 @@
         const data = await response.json();
         exchangeRate = data.blue.value_avg;
         lastUpdate = new Date(data.last_update);
-        document.getElementById('exchangeRate').innerHTML = `<span class="flag">🇺🇸</span>1 USD = <span class="flag">🇦🇷</span>${exchangeRate.toFixed(2)} ARS`;
+        document.getElementById('exchangeRate').innerText = `1 USD = ${exchangeRate.toFixed(2)} ARS`;
         document.getElementById('lastUpdate').innerText = `Última actualización: ${lastUpdate.toLocaleString()}`;
         document.querySelector('.loading').style.display = 'none';
-        updateChart();
       } catch (error) {
         console.error('Error al obtener la cotización:', error);
         document.getElementById('exchangeRate').innerText = 'Error al cargar la cotización';
@@ -276,51 +204,7 @@
         result = amount;
       }
 
-      const fromFlag = from === 'USD' ? '🇺🇸' : '🇦🇷';
-      const toFlag = to === 'USD' ? '🇺🇸' : '🇦🇷';
-      
-      document.getElementById('result').innerHTML = `
-        <span class="flag">${fromFlag}</span>${amount.toFixed(2)} ${from} = 
-        <span class="flag">${toFlag}</span>${result.toFixed(2)} ${to}
-      `;
-    }
-
-    function updateChart() {
-      const ctx = document.getElementById('exchangeRateChart').getContext('2d');
-      const now = new Date();
-      const labels = Array.from({length: 7}, (_, i) => {
-        const d = new Date(now);
-        d.setDate(d.getDate() - i);
-        return d.toLocaleDateString();
-      }).reverse();
-      
-      const data = {
-        labels: labels,
-        datasets: [{
-          label: 'Tipo de cambio USD/ARS',
-          data: [exchangeRate, exchangeRate * 0.98, exchangeRate * 1.02, exchangeRate * 0.99, exchangeRate * 1.01, exchangeRate * 0.97, exchangeRate],
-          fill: false,
-          borderColor: 'rgb(75, 192, 192)',
-          tension: 0.1
-        }]
-      };
-
-      if (chart) {
-        chart.destroy();
-      }
-
-      chart = new Chart(ctx, {
-        type: 'line',
-        data: data,
-        options: {
-          responsive: true,
-          scales: {
-            y: {
-              beginAtZero: false
-            }
-          }
-        }
-      });
+      document.getElementById('result').innerText = `${amount.toFixed(2)} ${from} = ${result.toFixed(2)} ${to}`;
     }
 
     fetchExchangeRate();
